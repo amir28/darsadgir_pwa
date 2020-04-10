@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>درصدگیر، محاسبه درصد تست و آزموش</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="green">
+        <meta name="apple-mobile-web-app-title" content="DarsadGir">
+        <link rel="manifest" href="/manifest.json"/> -->
+        <link rel="apple-touch-icon" href="/img/192.png">
+        <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+        <meta name="apple-mobile-web-app-title" content="DarsadGir">
+        <meta name="theme-color" content="#FFE1C4">
+        <!-- <script src="app.js"></script> -->
+        
+    </head>
+    <body>
+        <div class="nothing" style="text-align: center;">
+            <div id="info_box">
+                <h1>درصدگیر آزمون</h1>
+                <h3>محاسبه درصد تست و آزمون‌ها با یا بدون نمره منفی</h2>
+            </div>
+        </div>
+
+        <div id="root_box">
+            <div id="offline_info">
+                <h1 style="font-size:x-large;"><b>درصدگیری آزمون و تست</b> به صورت آنلاین و هم آفلاین </h1>
+                <p style="text-indent: 25px;">این صفحه در مرورگر گوشی مبایل قادر است به صورت آفلاین اجرا شود. تنها کافیست از منو مرورگرتان گزینه Add to Home screen را انتخاب کنید.</p>
+                <br />
+            </div>
+            <label for="numofquestions">تعداد سوالات :</label>
+            <input type="number" id="numofquestions" min="0" step="0"/>
+            <label for="corrects">تعداد درست‌ها :</label>
+            <input type="number" id="corrects" min="0" step="0" />
+            <br/>
+            <label for="incorrects">تعداد غلط‌ها :</label>
+            <input type="number" id="incorrects" min="0" step="0" />
+            <br/>
+            <div id="checkbox_box">
+                <!-- <input type="checkbox" id="is_negative" checked>
+                <label for="is_negative" id="is_negative_label">با نمره منفی</label> -->
+                <label class="container" id="is_negative_label">
+                    
+                    <input type="checkbox" id="is_negative" checked />
+                    <span class="checkmark"></span>
+                    با نمره منفی
+                </label>
+            </div>
+            <button id="calculator" onclick="calculator()">محاسبه درصد</button>
+        </div>
+        <div id="settings">
+            <div class="box">
+                <h3>تنظیمات نمره منفی</h3>
+                <hr>
+                <p>در قبال هر 
+                    <input type="number" step="0" min="0" value="3" id="negsettings_incorrects">
+                    سوال غلط،
+                    <input type="number" step="0" min="0" value="1" size="3" id="negsettings_corrects">
+                    سوال درست نادیده گرفته می‌شود.
+                </p>
+            </div>
+        </div>
+        <!-- <div id="popup" class="not_showing">
+            <div class="msgbox">
+                <div class="title">
+                    <h3>نتیجه</h3>
+                    <div class="close">X</div>
+                </div>
+                <p>Example</p>
+            </div>
+        </div> -->
+        <br/>
+        <script src="index.js"></script>
+    </body>
+</html>
