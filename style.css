@@ -89,6 +89,7 @@ body {
 #root_box label:not(#is_negative_label) {
     width: 17%;
     padding-top: 22px;
+    margin: 10px 0px;
 }
 #root_box #is_negative,
 #root_box label {
@@ -122,6 +123,7 @@ body {
 #root_box label {
     float: right;
     clear: none;
+    outline: none;
 }
 #checkbox_box {
     padding: 20px 0px;
