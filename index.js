@@ -8,17 +8,22 @@ function calculator() {
     
     for (var item of [correct, incorrect, numofques]) {
         if(isNaN(item)) {
-            alert("لطفا فرم‌ها را پر کنید و تنها از عداد انگیلیسی استفاده کنید. ");
+            popup("لطفا فرم‌ها را پر کنید و تنها از عداد انگیلیسی استفاده کنید. ");
             return;
         }
     }
     if (correct + incorrect > numofques) {
-        alert("فرم را دوباره بررسی کنید. چنین چیزی امکان ندارد :)")
+        popup("فرم را دوباره بررسی کنید. چنین چیزی امکان ندارد", "img/pokerface", "larger")
         return;
     }
     var correct_setting = parseInt(document.getElementById('negsettings_corrects').value);
     var incorrect_setting = parseInt(document.getElementById('negsettings_incorrects').value);
-
+    if (correct_setting == "") {
+        correct_setting = "1"
+    }
+    if (incorrect_setting == "") {
+        incorrect_setting = "3"
+    }
     if(document.getElementById("is_negative").checked) {
         incorrect = (correct_setting / incorrect_setting) * incorrect;
         var result = ((correct - incorrect) / numofques) * 100;
@@ -70,7 +75,7 @@ function showToUser(input) {
         return;
     }
 }
-function popup(msg, imgloc) {
+function popup(msg, imgloc, size = "") {
     let popup = document.getElementById("popup");
     p = document.getElementById("msg_result");
     img = document.getElementById("msg_img");
@@ -85,6 +90,11 @@ function popup(msg, imgloc) {
         img.height = 200;
     }
     img.src = imgloc;
+    if(size != "") {
+        p.style.fontSize = size;
+    } else {
+        p.style.fontSize = "xx-large";
+    }
     // console.log(popup.classList)
     if(popup.classList == "not_showing") {
         popup.classList = "";
