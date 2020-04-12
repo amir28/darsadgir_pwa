@@ -4,8 +4,8 @@
     "short_name": "Darsadgir",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#fff",
-    "theme_color": "#0078C1",
+    "background_color": "#e6eee4",
+    "theme_color": "#6e9e7e",
     "orientation": "portrait",
     "version": 1.0,
     "icons": [
@@ -22,6 +22,11 @@
       {
         "src": "/img/192.png",
         "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/512.png",
+        "sizes": "512x512",
         "type": "image/png"
       }
     ]

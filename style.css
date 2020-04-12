@@ -2,15 +2,15 @@
     font-family: "yekan";
     src: url("./BYekan.ttf");
 }
-/* @-webkit-keyframes animatezoom {
+@-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
     to {-webkit-transform: scale(1)}
-  }
-    
-  @keyframes animatezoom {
+}
+
+@keyframes animatezoom {
     from {transform: scale(0)} 
     to {transform: scale(1)}
-  } */
+}
 * {
     padding: 0;
     margin: 0;
@@ -18,6 +18,9 @@
     /* font-family: Arial, Helvetica, sans-serif; */
     box-sizing: border-box;
     font-family: "yekan";
+}
+h1, h2, p {
+    line-height: 1.5;
 }
 input[type = "number"] {
     direction: ltr;
@@ -88,8 +91,9 @@ body {
 }
 #root_box label:not(#is_negative_label) {
     width: 17%;
-    padding-top: 22px;
     margin: 10px 0px;
+    /* padding-top: 22px; */
+    line-height: 3;
 }
 #root_box #is_negative,
 #root_box label {
@@ -145,7 +149,7 @@ br {
     padding: 20px;
     background: rgb(255, 255, 255);
     border-radius: 9px;
-    border: 1px solid rgb(131, 131, 131);
+    border: 1px solid rgb(76, 136, 96);
     box-shadow: 0px 0px 1px 1px rgb(218, 218, 218)
 }
 #settings .box h3 {
@@ -157,16 +161,19 @@ br {
 
 }
 #settings .box input {
-    min-width: 20px;
-    max-width: 35px;
+    /* min-width: 20px; */
+    width: 35px;
+    max-width: 60px;
     font-size: 16px;
-    text-align: center;
+    padding: 3px 4px;
+    padding-right: 0px;
+    border-radius: 3px;
     /* background: red; */
     /* padding: 40px; */
 }
 
 /* Popup Style */
-/* .not_showing {
+.not_showing {
     display: none;
 }
 #popup {
@@ -178,21 +185,81 @@ br {
     height: 100%;
 }
 #popup .msgbox {
+    -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.4s;
+    animation-fill-mode: forwards;
+    overflow: hidden; /*Needed for flaoting img*/
+    position: relative;
+    margin: 10% auto 5% auto;
+    border: 1px solid rgb(76, 136, 96);
+    width: 100%;
+    max-width: 400px;
+    min-height: 130px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 12px 2px rgb(199, 199, 199);
+    padding: 20px;
+    padding-top: 30px;
+    background: rgb(236, 236, 236);
+    /* border-top-right-radius: 30px; */
+    
+}
+#popup .close {
+    color: rgb(124, 124, 124);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* padding: 15px; */
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 42px;
+    background: rgb(250, 250, 250);
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 1px #ccc;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-family: monospace;
+}
+#popup .close:hover {
+    background: rgb(171, 209, 139);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+#popup .close:active {
+    background: rgb(109, 148, 78);
+}
+#popup img {
+    float: left;
+    /* width: 200px; */
+    /* height: 200px; */
+}
+#popup .msgbox p {
+    float: right;
+    width: calc(100% - 256px);
+    font-size: xx-large;
+    margin-top: 50px;
+}
+@media only screen and (max-width: 600px) {
+    #popup .msgbox p {
+        width: calc(100% - 200px);
+    }
+}
+/* #popup .msgbox {
     position: relative;
     margin: 20% auto 5% auto;
-    border: 1px solid rgb(63, 63, 63);
+    border: 1px solid rgb(76, 136, 96);
     width: 100%;
     max-width: 500px;
     min-height: 100px;
     border-radius: 7px;
-    box-shadow: 0px 0px 1px 1px rgb(218, 218, 218);
+    box-shadow: 0px 0px 0px 1px rgb(199, 199, 199);
     padding: 10px;
     padding-top: 50px;
-    background: rgb(235, 235, 235);
+    background: rgb(236, 236, 236);
     
 }
 #popup .msgbox .title {
-    background: rgb(209, 209, 219);
+    background: rgb(219, 228, 216);
     position: absolute;
     top: 0;
     right: 0;
@@ -221,79 +288,78 @@ br {
 }
 #popup .msgbox .close:hover {
     background: #ccc;
-}
+} */
 #popup .msgbox .title h3 {
     float: left;
     padding-top: 7px;
     padding-left: 10px;
-} */
+}
 
 /* Checkbox */
 .container {
-  display: block;
-  position: relative;
-  padding-right: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    background: rgb(110, 158, 126);
+    border-radius: 3px;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+    background-color: rgb(76, 136, 96);;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
+
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 @media only screen and (max-width: 700px) {
@@ -302,8 +368,23 @@ br {
         /* clear: both; */
         display: block;
         width: 100%;
+        margin: 5px 0px;
     }
     body {
         padding-top: 90px;
+    }
+    #root_box label:not(#is_negative_label) {
+        /* width: 17%; */
+        margin: 5px 0px;
+        /* padding-top: 22px; */
+        line-height: 1;
+    }
+    #popup .msgbox .close {
+        /* padding: 50px; */
+        width: 60px;
+        height: 60px;
+        line-height: 62px;
+        font-size: 25px;
+        
     }
 }
