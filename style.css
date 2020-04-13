@@ -1,6 +1,7 @@
 @font-face{
     font-family: "yekan";
-    src: url("./BYekan.ttf");
+    src: local("B Yekan"), local("2  Yekan"), url("./BYekan.ttf");
+    font-display: swap;
 }
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 

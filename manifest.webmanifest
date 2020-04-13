@@ -1,8 +1,7 @@
 {
     "name": "Darsadgir",
     "description": "Percentage calculator for exams",
-    "short_name": "Darsadgir",
-    "start_url": "/",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#e6eee4",
     "theme_color": "#6e9e7e",

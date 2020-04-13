@@ -14,7 +14,7 @@ function calculator() {
     
     for (var item of [correct, incorrect, numofques]) {
         if(isNaN(item)) {
-            popup("لطفا فرم‌ها را پر کنید و تنها از کیبورد انگیلیسی استفاده کنید. ", "", "larger");
+            popup("لطفا فرم‌ها را پر کنید و تنها از کیبورد انگلیسی استفاده کنید. ", "", "larger");
             return;
         }
     }
@@ -137,13 +137,13 @@ function closepopup() {
         popup.classList = "not_showing";
     }
 }
-// if('serviceWorker' in navigator){
-//     navigator.serviceWorker.register('/sw.js')
-//       .then(reg => console.log('service worker registered'))
-//       .catch(err => console.log('service worker not registered', err));
-// } else {
-//     console.log("service worker not supported by your browser")
-// }
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('service worker registered'))
+      .catch(err => console.log('service worker not registered', err));
+} else {
+    console.log("service worker not supported by your browser")
+}
 
 // If the site shows in all screen(add to home screen) mode
 if (
