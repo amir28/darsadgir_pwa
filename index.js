@@ -14,7 +14,7 @@ function calculator() {
     
     for (var item of [correct, incorrect, numofques]) {
         if(isNaN(item)) {
-            popup("لطفا فرم‌ها را پر کنید و تنها از عداد انگیلیسی استفاده کنید. ", "", "larger");
+            popup("لطفا فرم‌ها را پر کنید و تنها از کیبورد انگیلیسی استفاده کنید. ", "", "larger");
             return;
         }
     }

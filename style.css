@@ -73,7 +73,7 @@ body {
 #settings {
     margin: auto;
     max-width: 750px;
-    padding: 10px;
+    padding: 15px;
 }
 
 
@@ -84,7 +84,7 @@ body {
     display: inline-block;
     width: 100%;
     min-height: 50px;
-    margin: 10px 0px;
+    margin: 10px 0px; /*this just apply for #calculator button*/
 }
 #root_box input[type = "number"] {
     width: 83%;
@@ -130,7 +130,7 @@ body {
     outline: none;
 }
 #checkbox_box {
-    padding: 20px 0px;
+    padding: 10px 0px;
     overflow: hidden;
     float: right;
 }
@@ -256,6 +256,11 @@ p + img.not_showing {
     #popup .msgbox p {
         width: calc(100% - 200px);
     }
+}
+
+
+#offline_info {
+    margin-bottom: 15px;
 }
 /* #popup .msgbox {
     position: relative;
@@ -402,5 +407,11 @@ p + img.not_showing {
     }
     #popup .msgbox {
         margin: 20% auto 5% auto;
+    }
+    #calculator {
+        margin: 4px 0px;
+    }
+    #checkbox_box {
+        padding: 8px 0px;
     }
 }
