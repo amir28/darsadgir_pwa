@@ -4,7 +4,8 @@ const assets = [
   '/index.html',
   '/index.js',
   '/style.css',
-  'BYekan.ttf'
+  '/BYekan.ttf',
+  '/favicon.ico'
 ];// install event
 self.addEventListener('install', evt => {
   evt.waitUntil(
