@@ -8,7 +8,7 @@ function calculator() {
     
     for (var item of [correct, incorrect, numofques]) {
         if(isNaN(item)) {
-            popup("لطفا فرم‌ها را پر کنید و تنها از عداد انگیلیسی استفاده کنید. ");
+            popup("لطفا فرم‌ها را پر کنید و تنها از عداد انگیلیسی استفاده کنید. ", "", "larger");
             return;
         }
     }
@@ -62,15 +62,15 @@ function showToUser(input) {
         popup(final, "img/downer-than-50");
         return;
     }
-    if(input >= 50) {
+    if(input <= 65) {
         popup(final, "img/upper-than-50");
         return;
     }
-    if(input >= 65) {
+    if(input <= 90) {
         popup(final, "img/upper-than-65");
         return;
     }
-    if(input >= 90 ) {
+    if(input <= 100 ) {
         popup(final, "img/upper-than-90");
         return;
     }
@@ -80,16 +80,38 @@ function popup(msg, imgloc, size = "") {
     p = document.getElementById("msg_result");
     img = document.getElementById("msg_img");
     p.innerHTML = msg;
-    if(window.devicewidth > 600) {
-        imgloc += "-256.png";
-        img.width = 256;
-        img.height = 256;
+
+    if(imgloc != "") {
+        if(window.devicewidth > 600) {
+            imgloc += "-256.png";
+            img.width = 256;
+            img.height = 256;
+        } else {
+            imgloc += "-200.png";
+            img.width = 200;
+            img.height = 200;
+        }
+        img.src = imgloc;
+        if(img.classList.contains("not_showing")) {
+            img.classList.remove("not_showing");
+        }
     } else {
-        imgloc += "-200.png";
-        img.width = 200;
-        img.height = 200;
+        img.src = ""
+        if(!img.classList.contains("not_showing")) {
+            img.classList.add("not_showing")
+        }
     }
-    img.src = imgloc;
+
+    // if(window.devicewidth > 600) {
+    //     imgloc += "-256.png";
+    //     img.width = 256;
+    //     img.height = 256;
+    // } else {
+    //     imgloc += "-200.png";
+    //     img.width = 200;
+    //     img.height = 200;
+    // }
+    // img.src = imgloc;
     if(size != "") {
         p.style.fontSize = size;
     } else {

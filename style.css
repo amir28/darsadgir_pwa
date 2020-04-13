@@ -140,10 +140,6 @@ br {
 
 
 /* Settings Section */
-#settings {
-    
-    
-}
 #settings .box {
     /* display: inline-block; */
     padding: 20px;
@@ -158,8 +154,25 @@ br {
 #settings .box p {
     margin-top: 4px;
     line-height: 1.25;
-
 }
+img.not_showing ~ p {
+    width: 100% !important;
+}
+/* #setting .box p + img.not_showing {
+    color: red;
+}
+img.not_showing + * {
+    color: red;
+}
+img.not_showing ~ * {
+    color: green;
+}
+* ~ img.not_showing {
+    color: blue;
+}
+p + img.not_showing {
+    color: grey;
+} */
 #settings .box input {
     /* min-width: 20px; */
     width: 35px;
