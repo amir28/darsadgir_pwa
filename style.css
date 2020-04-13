@@ -400,4 +400,7 @@ p + img.not_showing {
         font-size: 25px;
         
     }
+    #popup .msgbox {
+        margin: 20% auto 5% auto;
+    }
 }

@@ -4,7 +4,7 @@ const assets = [
   '/index.html',
   '/index.js',
   '/style.css',
-  'BYekan.ttf',
+  'BYekan.ttf'
 ];// install event
 self.addEventListener('install', evt => {
   evt.waitUntil(

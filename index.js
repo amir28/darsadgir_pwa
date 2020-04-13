@@ -1,4 +1,10 @@
 var devicewidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+var msg_img = document.getElementById('msg_img');
+msg_img.onerror = () => {
+    if(!msg_img.classList.contains('not_showing')) {
+        msg_img.classList.add('not_showing');
+    }
+}
 function calculator() {
     // Check Values
     // Get textbox values
@@ -79,6 +85,7 @@ function popup(msg, imgloc, size = "") {
     let popup = document.getElementById("popup");
     p = document.getElementById("msg_result");
     img = document.getElementById("msg_img");
+    // img.
     p.innerHTML = msg;
 
     if(imgloc != "") {
