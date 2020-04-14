@@ -1,5 +1,5 @@
 {
-    "name": "Darsadgir",
+    "short_name": "Darsadgir",
     "description": "Percentage calculator for exams",
     "start_url": "/index.html",
     "display": "standalone",
