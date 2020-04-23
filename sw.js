@@ -1,9 +1,10 @@
-const staticCacheName = 'v0.6';
+const staticCacheName = 'v0.7';
 const assets = [
   '/',
   '/index.html',
   '/index.js',
   '/style.css',
+  '/reset.css',
   '/BYekan.ttf',
   '/favicon.ico'
 ];// install event

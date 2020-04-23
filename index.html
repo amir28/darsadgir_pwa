@@ -11,9 +11,8 @@
 		<meta property="og:title" content="درصدگیر" />
 		<meta property="og:description" content="درصدگیری آزمون و تست به صورت آنلاین و آفلاین" />
 		<meta property="og:url" content="https://darsadgir.ir/" />
-        <!-- <link rel="preload" href="BYekan.ttf"> -->
-        <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="reset.css"/>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="canonical" href="https://darsadgir.ir/"/>
@@ -42,50 +41,42 @@
         <meta name="mobile-web-app-title" content="DarsadGir" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="DarsadGir" />
-        
-        
-        <!-- <link rel="shortcut icon" href="./favicon.ico"/> -->
-
         <meta name="msapplication-TileColor" content="#6e9e7e" />
         <meta name="theme-color" content="#6e9e7e" />
-        <!-- <script src="app.js"></script> -->
         <link rel="manifest" href="./manifest.webmanifest"/>
         
     </head>
     <body>
-        <div class="nothing" style="text-align: center;">
-            <div id="info_box">
+        <header id="topbar">
+            <!-- <div id="info_box"> -->
                 <h1>درصدگیر آزمون</h1>
-                <h3>محاسبه درصد تست و آزمون‌ها با یا بدون نمره منفی</h2>
-            </div>
-        </div>
+                <h3>محاسبه درصد تست و آزمون‌ها با یا بدون نمره منفی</h3>
+            <!-- </div> -->
+        </header>
 
-        <div id="root_box">
-            <div id="offline_info">
+        <div id="root_box" class="container">
+            <div id="info_box">
                 <h1 style="font-size:x-large;"><b>درصدگیری آزمون و تست</b> به صورت آنلاین و آفلاین </h1>
                 <p>‌این صفحه قادر است در تلفن‌همراه به صورت آفلاین نیز اجرا شود. تنها کافیست از منوی مرورگرتان گزینه‌ی Add to Home screen را انتخاب کنید.</p>
             </div>
-            <label for="numofquestions">تعداد سوالات :</label>
-            <input type="number" id="numofquestions" min="0" step="0"/>
-            <label for="corrects">تعداد درست‌ها :</label>
-            <input type="number" id="corrects" min="0" step="0" />
-            <br/>
-            <label for="incorrects">تعداد غلط‌ها :</label>
-            <input type="number" id="incorrects" min="0" step="0" />
-            <br/>
-            <div id="checkbox_box">
-                <!-- <input type="checkbox" id="is_negative" checked>
-                <label for="is_negative" id="is_negative_label">با نمره منفی</label> -->
-                <label class="container" id="is_negative_label">
-                    
-                    <input type="checkbox" id="is_negative" checked />
-                    <span class="checkmark"></span>
-                    با نمره منفی
-                </label>
+            <div id="input_box">
+                <label for="numofquestions">تعداد سوالات :</label>
+                <input type="number" id="numofquestions" min="0" step="0"/>
+                <label for="corrects">تعداد درست‌ها :</label>
+                <input type="number" id="corrects" min="0" step="0" />
+                <br/>
+                <label for="incorrects">تعداد غلط‌ها :</label>
+                <input type="number" id="incorrects" min="0" step="0" />
+                <br/>
             </div>
-            <button id="calculator" onclick="calculator()">محاسبه درصد</button>
+            <label class="checkbox" id="is_negative_label">
+                <input type="checkbox" id="is_negative" checked />
+                <span class="checkmark"></span>
+                با نمره منفی
+            </label>
+            <button id="calc_btn" onclick="calculator()">محاسبه درصد</button>
         </div>
-        <div id="settings">
+        <div id="settings" class="container">
             <div class="box">
                 <h3>تنظیمات نمره منفی</h3>
                 <hr style="border-color: rgb(186, 224, 199);" />
@@ -101,7 +92,7 @@
                 <hr style="border-color: rgb(186, 224, 199);" />
                 <p>در صورت بروز هر گونه مشکل از طریق <a href="https://github.com/amir28/darsadgir_pwa/issues/new" rel="noopener nofollow" target="_blank">این لینک</a> آن را با ما در میان بگذارید.
                  همچنین بهتر است برای پیشگیری از بروز مشکلات، از مرورگر به‌روز استفاده کنید.</p>
-                </p>
+                
             </div>
         </div>
         <!-- <footer>

@@ -12,16 +12,23 @@
     from {transform: scale(0)} 
     to {transform: scale(1)}
 }
+/* --- Common settings --- */
 * {
     padding: 0;
     margin: 0;
     direction: rtl;
     /* font-family: Arial, Helvetica, sans-serif; */
     box-sizing: border-box;
-    font-family: "yekan";
+    font-family: "yekan" !important;
+}
+h1, h2, h3 {
+    font-weight: bold;
 }
 h1, h2, p {
     line-height: 1.5;
+}
+a {
+    text-decoration: none;
 }
 input[type = "number"] {
     direction: ltr;
@@ -29,28 +36,21 @@ input[type = "number"] {
     border-radius: 5px;
     padding: 0px 6px;
     padding-right: 0px;
-    
 }
-#root_box input[type = "number"] {
+#input_box input {
     font-size: 23px;
 }
 body {
-    padding-top: 100px;
+    /* padding-top: 100px; */
     /* background: rgb(235, 235, 235); */
     background: rgba(230, 238, 228, 0.87);
 }
-.nothing {
-    position: absolute;
-    top:0;
+
+/* ----------Top Bar---------- */
+#topbar {
     display: block;
-    width: 100%;
-    text-align: center;
-}
-#info_box {
-    /* position: fixed;
-    top:0; */
-    
-    display: inline-block;
+    margin: auto;
+    margin-top:0px;
     text-align: center;
     color: rgb(56, 184, 135);
     border-radius: 10px;
@@ -60,89 +60,77 @@ body {
     border: 1px solid rgb(24, 129, 32);
     border-top: none;
     background: #efe;
-    /* margin: auto; */
-    /* margin-bottom: 40px; */
+    width: 100%;
+    max-width: 450px;
     box-shadow: 0px 0px 2px 0px rgba(70, 185, 180, 0.6);
 }
-#info_box h1 {
+#topbar h1 {
     color: rgb(98, 192, 95);
 }
-#info_box h3 {
+#topbar h3 {
     opacity: 0.8;
 }
-#root_box,
-#settings {
+
+
+
+/* -------- Main Body -------- */
+
+.container { 
     margin: auto;
     max-width: 750px;
     padding: 15px;
 }
-
-
-
+#info_box {
+    margin-bottom: 15px;
+}
 /* Styling inbox items */
-#root_box button,
-#root_box input[type = "number"] {
-    display: inline-block;
-    width: 100%;
-    min-height: 50px;
-    margin: 10px 0px; /*this just apply for #calculator button*/
-}
-#root_box input[type = "number"] {
-    width: 83%;
-}
-#root_box label:not(#is_negative_label) {
-    width: 17%;
+#calc_btn,
+#input_box input,
+#input_box label {
     margin: 10px 0px;
-    /* padding-top: 22px; */
+}
+#calc_btn,
+#input_box input {
+    transition: all 0.2s;
+}
+/* stick input and label together */
+#input_box input,
+#input_box label {
+    float: right;
+} br {
+    clear: both; /* br tag seperate the text inputs*/
+}
+#input_box input {
+    width: 83%;
+    min-height: 50px;
+}
+#input_box label {
+    width: 17%;
     line-height: 3;
 }
-#root_box #is_negative,
-#root_box label {
-    /* padding: 0px 10px; */
-    display: inline-block;
-    width: auto;
-    /* float: right; */
-}
-#root_box button {
-    border: none;
-    outline: none;
-    padding: 5px 20px;
+
+#calc_btn {
+    width: 100%;
+    padding: 10px 20px;
     background: none;
     border: 2px solid rgb(72, 134, 72);
     border-radius: 4px;
     font-size: large;
 }
-#root_box button:hover {
+#calc_btn:hover {
     background: rgb(72, 134, 72);
     color: #dfdfdf;
 }
-#root_box button,
-#root_box input[type = "number"] {
-    transition: all 0.2s;
-}
-#root_box button:focus,
-#root_box input[type = "number"]:focus {
+
+#calc_btn:focus,
+#input_box input:focus {
     box-shadow: 0px 0px 0px 3px rgb(99, 182, 99);
 }
-#root_box input[type = "number"],
-#root_box label {
-    float: right;
-    clear: none;
-    outline: none;
-}
-#checkbox_box {
-    padding: 10px 0px;
-    overflow: hidden;
-    float: right;
-}
-br {
-    clear: both;
-}
 
 
-/* Settings Section */
+
+/* ---- Settings Section ---- */
 #settings .box {
-    /* display: inline-block; */
     padding: 20px;
     background: rgb(255, 255, 255);
     border-radius: 9px;
@@ -156,24 +144,9 @@ br {
     margin-top: 4px;
     line-height: 1.25;
 }
-img.not_showing ~ p {
-    width: 100% !important;
-}
-/* #setting .box p + img.not_showing {
-    color: red;
-}
-img.not_showing + * {
-    color: red;
-}
-img.not_showing ~ * {
-    color: green;
-}
-* ~ img.not_showing {
-    color: blue;
-}
-p + img.not_showing {
-    color: grey;
-} */
+
+
+
 #settings .box input {
     /* min-width: 20px; */
     width: 35px;
@@ -186,10 +159,8 @@ p + img.not_showing {
     /* padding: 40px; */
 }
 
-/* Popup Style */
-.not_showing {
-    display: none;
-}
+/* ------ Popup Style ------ */
+
 #popup {
     position: fixed;
     z-index: 1;
@@ -202,7 +173,7 @@ p + img.not_showing {
     -webkit-animation: animatezoom 0.4s;
     animation: animatezoom 0.4s;
     animation-fill-mode: forwards;
-    overflow: hidden; /*Needed for flaoting img*/
+    overflow: hidden; /* Needed for flaoting img and p */
     position: relative;
     margin: 10% auto 5% auto;
     border: 1px solid rgb(76, 136, 96);
@@ -244,80 +215,49 @@ p + img.not_showing {
 }
 #popup img {
     float: left;
-    /* width: 200px; */
-    /* height: 200px; */
 }
 #popup .msgbox p {
     float: right;
+    /* the image size is 256*256 */
     width: calc(100% - 256px);
     font-size: xx-large;
     margin-top: 50px;
 }
+/* according to javascript, devices from lower 600px will get 200*200 image */
 @media only screen and (max-width: 600px) {
     #popup .msgbox p {
         width: calc(100% - 200px);
     }
 }
+.not_showing {
+    display: none;
+}
+/* Extend p which is near a image that has not_showing class */
+/* it's just for popup. there isn't any other img tag in this webpage :) */
+img.not_showing ~ p {
+    width: 100% !important;
+}
 
 
-#offline_info {
-    margin-bottom: 15px;
-}
-/* #popup .msgbox {
-    position: relative;
-    margin: 20% auto 5% auto;
-    border: 1px solid rgb(76, 136, 96);
-    width: 100%;
-    max-width: 500px;
-    min-height: 100px;
-    border-radius: 7px;
-    box-shadow: 0px 0px 0px 1px rgb(199, 199, 199);
-    padding: 10px;
-    padding-top: 50px;
-    background: rgb(236, 236, 236);
-    
-}
-#popup .msgbox .title {
-    background: rgb(219, 228, 216);
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-bottom: 1px solid black;
-    width: 100%;
-    height: 40px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-}
-#popup .msgbox .close {
-    padding-top: 7px;
-    cursor: pointer;
-    float: right;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    background: rgb(228, 228, 228);
-    font-size: 20px;
-    font-weight: bold;
-    border-top-right-radius: 7px;
-    border: 1px solid black;
-    border-right: none;
-    border-top: none;
-    color: #333;
-    transition: background 0.3s ease;
-}
-#popup .msgbox .close:hover {
-    background: #ccc;
-} */
 #popup .msgbox .title h3 {
     float: left;
     padding-top: 7px;
     padding-left: 10px;
 }
 
-/* Checkbox */
-.container {
+/* ------------- Checkbox --------------*/
+/* setting checkbox size */
+.checkbox {
+    line-height: 25px;
+} .checkmark {
+    width: 25px;
+    height: 25px;
+}
+
+.checkbox {
+    /* position: relative; */
     display: block;
-    position: relative;
+    padding: 10px 0px;
     padding-right: 35px;
     margin-bottom: 12px;
     cursor: pointer;
@@ -329,47 +269,37 @@ p + img.not_showing {
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
 }
-
-/* Create a custom checkbox */
 .checkmark {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: block;
+    float: right;
+    position: relative;
+    /* top: 0; */
+    /* right: 0; */
     height: 25px;
     width: 25px;
+    margin-left: 7px;
     background: rgb(110, 158, 126);
     border-radius: 3px;
 }
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.checkbox:hover input ~ .checkmark {
     background-color: rgb(76, 136, 96);;
 }
-
-/* When the checkbox is checked, add a blue background */
-
-
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
     display: block;
 }
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkbox .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -380,10 +310,9 @@ p + img.not_showing {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 @media only screen and (max-width: 700px) {
-    #root_box label:not(#is_negative_label),
-    #root_box input[type = "number"] {
+    #input_box label,
+    #input_box input {
         /* clear: both; */
         display: block;
         width: 100%;
@@ -392,7 +321,7 @@ p + img.not_showing {
     body {
         padding-top: 90px;
     }
-    #root_box label:not(#is_negative_label) {
+    #input_box label {
         /* width: 17%; */
         margin: 5px 0px;
         /* padding-top: 22px; */
