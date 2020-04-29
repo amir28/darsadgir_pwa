@@ -318,9 +318,9 @@ img.not_showing ~ p {
         width: 100%;
         margin: 5px 0px;
     }
-    body {
+    /* body {
         padding-top: 90px;
-    }
+    } */
     #input_box label {
         /* width: 17%; */
         margin: 5px 0px;
