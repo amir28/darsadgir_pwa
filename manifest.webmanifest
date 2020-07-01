@@ -1,5 +1,6 @@
 {
-    "short_name": "Darsadgir",
+    "name": "درصد گیری آزمون و تست",
+    "short_name": "درصدگیر",
     "description": "Percentage calculator for exams",
     "start_url": "/index.html",
     "display": "standalone",
