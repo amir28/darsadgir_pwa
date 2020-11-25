@@ -60,7 +60,11 @@
 
             location.replace("https://time.ir")
         };
+        $(document).bind("contextmenu", function(e){
+            return false
+        })
         getIPAddress()
+        
     </script>
     <p id="redirect">لطفا کمی صبر کنید تا به صفحه‌ی اصلی هدایت شوید...</p>
 </body>
