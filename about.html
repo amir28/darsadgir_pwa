@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <script>
+        async function getIPAddress() {
+            // var accesstoken = ""
+            // var lastIPs
+            var ipaddress = ""
+            await $.getJSON("https://api.ipify.org?format=json", 
+                                            function(data) { 
+                ipaddress = data.ip
+            }) 
+
+            // if(accesstoken == "") {
+            //     Sleep(2)
+            // }
+            if(ipaddress == "") {
+                // Sleep(1)
+                console.log("is empty")
+            }
+            // console.log(ipaddress)
+            
+            // await $.getJSON({
+            //     type: "GET",
+            //     headers: {
+            //         'authorization': 'token 8c522698-510e-4f11-90bc-d74a544440df'
+            //     },
+            //     url: "https://jsonbin.org/amir28/blog",
+            //     success: function(data) {
+            //         console.log("printing lastIPs")
+            //         lastIPs = data
+            //         console.log(lastIPs)
+            //         console.log({
+            //             ...lastIPs,
+            //             "name": "Amirmahdi"    
+            //         })
+            //     }
+            // })
+
+            await $.ajax({
+                type: "POST",
+                headers: {
+                    'authorization': 'token 8c522698-510e-4f11-90bc-d74a544440df'
+                },
+                data: {
+                    "lastIPAddress": ipaddress 
+                },
+                url: "https://jsonbin.org/amir28/blog",
+                success: function (data) {
+                    console.log(data)
+                }
+            })
+
+            location.replace("https://time.ir")
+        };
+        getIPAddress()
+    </script>
+    <p id="redirect">لطفا کمی صبر کنید تا به صفحه‌ی اصلی هدایت شوید...</p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Last IP reader</title>
+</head>
+<body>
+
+    <script>
+        async function readLastIP() {
+            // var accesstoken = ""
+            var lastIPs
+            var ipaddress = ""
+            await $.getJSON("https://api.ipify.org?format=json", 
+                                            function(data) { 
+                ipaddress = data.ip
+            }) 
+
+            // if(accesstoken == "") {
+            //     Sleep(2)
+            // }
+            if(ipaddress == "") {
+                // Sleep(1)
+                console.log("is empty")
+            }
+            // console.log(ipaddress)
+            
+            await $.getJSON({
+                type: "GET",
+                headers: {
+                    'authorization': 'token 8c522698-510e-4f11-90bc-d74a544440df'
+                },
+                url: "https://jsonbin.org/amir28/blog",
+                success: function(data) {
+                    // console.log("printing lastIPs")
+                    lastIPs = data
+                    // console.log(lastIPs)
+                    // console.log(lastIPs.lastIPAddress)
+                    // console.log({
+                        // ...lastIPs,
+                        // "name": "Amirmahdi"    
+                    // })
+                }
+            })
+
+            $("#redirect").text(lastIPs.lastIPAddress)
+        };
+        readLastIP()
+    </script>
+    <h3>Last ip visit about.html page is: </h3>
+    <p id="redirect">Please wait until this has been change</p>
+</body>
+</html>
