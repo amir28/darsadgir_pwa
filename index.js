@@ -1,19 +1,21 @@
 var devicewidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var msg_img = document.getElementById('msg_img');
-msg_img.onerror = () => {
+
+msg_img.onerror = function() {
     if(!msg_img.classList.contains('not_showing')) {
         msg_img.classList.add('not_showing');
     }
-}
+};
 function calculator() {
     // Check Values
     // Get textbox values
     var correct = parseInt(document.getElementById("corrects").value);
     var incorrect = parseInt(document.getElementById("incorrects").value);
     var numofques = parseInt(document.getElementById("numofquestions").value);
-    
-    for (var item of [correct, incorrect, numofques]) {
-        if(isNaN(item)) {
+
+    const inputs = [correct, incorrect, numofques]
+    for (var num in inputs) {
+        if(isNaN(inputs[num])) {
             popup("لطفا فرم‌ها را پر کنید و تنها از کیبورد انگلیسی استفاده کنید. ", "", "larger");
             return;
         }
@@ -81,13 +83,14 @@ function showToUser(input) {
         return;
     }
 }
-function popup(msg, imgloc, size = "") {
-    let popup = document.getElementById("popup");
+function popup(msg, imgloc, size) {
+	if(size === undefined) {
+		size = "";
+	}
+    var popup = document.getElementById("popup");
     p = document.getElementById("msg_result");
     img = document.getElementById("msg_img");
-    // img.
     p.innerHTML = msg;
-
     if(imgloc != "") {
         if(window.devicewidth > 600) {
             imgloc += "-256.png";
@@ -105,10 +108,9 @@ function popup(msg, imgloc, size = "") {
     } else {
         img.src = ""
         if(!img.classList.contains("not_showing")) {
-            img.classList.add("not_showing")
+            img.classList.add("not_showing");
         }
     }
-
     // if(window.devicewidth > 600) {
     //     imgloc += "-256.png";
     //     img.width = 256;
@@ -124,19 +126,19 @@ function popup(msg, imgloc, size = "") {
     } else {
         p.style.fontSize = "xx-large";
     }
-    // console.log(popup.classList)
-    if(popup.classList == "not_showing") {
-        popup.classList = "";
+    if(popup.classList.contains("not_showing")) {
+        popup.classList.remove("not_showing");
     }
 }
 
 
 function closepopup() {
     let popup = document.getElementById("popup");
-    if(popup.classList == "") {
-        popup.classList = "not_showing";
+    if(!popup.classList.contains("not_showing")) {
+        popup.classList.add("not_showing");
     }
 }
+
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('/sw.js')
       .then(reg => console.log('service worker registered'))
