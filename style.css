@@ -1,7 +1,8 @@
 @font-face{
-    font-family: "yekan";
-    src: local("B Yekan"), local("2  Yekan"), url("./BYekan.ttf");
-    font-display: swap;
+    font-family: "Vazirmatn";
+    src: url("https://cdn.fontcdn.ir/Fonts/Vazirmatn/a3aa104f9a256734ca6769e017b4a2697c3036221e13758e0995a0cbeea969c4.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
 }
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
@@ -19,7 +20,7 @@
     direction: rtl;
     /* font-family: Arial, Helvetica, sans-serif; */
     box-sizing: border-box;
-    font-family: "yekan" !important;
+    font-family: "Vazirmatn" !important;
 }
 h1, h2, h3 {
     font-weight: bold;
@@ -32,9 +33,10 @@ a {
 }
 input[type = "number"] {
     direction: ltr;
-    border: 1px solid rgb(76, 136, 96);
+    text-align: center;
+    border: 1px solid rgba(174, 0, 255, 0.87);
     border-radius: 5px;
-    padding: 0px 6px;
+    /* padding: 0px 6px; */
     padding-right: 0px;
 }
 #input_box input {
@@ -43,7 +45,8 @@ input[type = "number"] {
 body {
     /* padding-top: 100px; */
     /* background: rgb(235, 235, 235); */
-    background: rgba(230, 238, 228, 0.87);
+    background: rgba(241, 228, 247, 0.87);
+    text-align: center
 }
 
 /* ----------Top Bar---------- */
@@ -52,20 +55,15 @@ body {
     margin: auto;
     margin-top:0px;
     text-align: center;
-    color: rgb(56, 184, 135);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     padding: 10px 10px;
-    border: 1px solid rgb(24, 129, 32);
     border-top: none;
-    background: #efe;
+    background: rgba(174, 0, 255, 0.87);
     width: 100%;
     max-width: 450px;
-    box-shadow: 0px 0px 2px 0px rgba(70, 185, 180, 0.6);
-}
-#topbar h1 {
-    color: rgb(98, 192, 95);
 }
 #topbar h3 {
     opacity: 0.8;
@@ -77,54 +75,56 @@ body {
 
 .container { 
     margin: auto;
-    max-width: 750px;
-    padding: 15px;
+    max-width: 700px;
+    padding: 10px;
 }
 #info_box {
     margin-bottom: 15px;
 }
 /* Styling inbox items */
-#calc_btn,
+/* #calc_btn,
 #input_box input,
 #input_box label {
     margin: 10px 0px;
-}
-#calc_btn,
+} */
 #input_box input {
+    max-width: 30px;
     transition: all 0.2s;
 }
 /* stick input and label together */
-#input_box input,
+
+/* #input_box input,
 #input_box label {
-    float: right;
+    float: center;
 } br {
-    clear: both; /* br tag seperate the text inputs*/
-}
-#input_box input {
-    width: 83%;
-    min-height: 50px;
+    clear: both;
+} */
+
+/* #input_box input {
+    width: 85%;
 }
 #input_box label {
-    width: 17%;
-    line-height: 3;
-}
+    width: 15%;
+    line-height: 2.5;
+} */
 
 #calc_btn {
     width: 100%;
     padding: 10px 20px;
-    background: none;
-    border: 2px solid rgb(72, 134, 72);
+    background: rgba(174, 0, 255, 0.87);
     border-radius: 4px;
     font-size: large;
+    color: rgb(255, 255, 255);
 }
 #calc_btn:hover {
-    background: rgb(72, 134, 72);
-    color: #dfdfdf;
+    background: rgba(174, 0, 255, 0.5);
+    color: rgb(255, 255, 255);
 }
 
-#calc_btn:focus,
+#settings .box input:focus,
+/* #calc_btn:focus, */
 #input_box input:focus {
-    box-shadow: 0px 0px 0px 3px rgb(99, 182, 99);
+    box-shadow: 0px 0px 0px 3px rgba(174, 0, 255, 0.5);
 }
 
 
@@ -134,7 +134,7 @@ body {
     padding: 20px;
     background: rgb(255, 255, 255);
     border-radius: 9px;
-    border: 1px solid rgb(76, 136, 96);
+    border: 1px solid rgba(174, 0, 255, 0.87);
     box-shadow: 0px 0px 1px 1px rgb(218, 218, 218)
 }
 #settings .box h3 {
@@ -152,7 +152,7 @@ body {
     width: 35px;
     max-width: 60px;
     font-size: 16px;
-    padding: 3px 4px;
+    /* padding: 3px 4px; */
     padding-right: 0px;
     border-radius: 3px;
     /* background: red; */
@@ -176,7 +176,7 @@ body {
     overflow: hidden; /* Needed for flaoting img and p */
     position: relative;
     margin: 10% auto 5% auto;
-    border: 1px solid rgb(76, 136, 96);
+    border: 1px solid rgba(174, 0, 255, 0.87);
     width: 100%;
     max-width: 400px;
     min-height: 130px;
@@ -189,7 +189,7 @@ body {
     
 }
 #popup .close {
-    color: rgb(124, 124, 124);
+    color: rgba(174, 0, 255, 0.87);
     position: absolute;
     top: 0;
     left: 0;
@@ -198,20 +198,19 @@ body {
     height: 40px;
     text-align: center;
     line-height: 42px;
-    background: rgb(250, 250, 250);
+    background: None;
     border-radius: 3px;
-    box-shadow: 0px 0px 5px 1px #ccc;
     transition: all 0.3s ease;
     font-weight: bold;
     font-family: monospace;
 }
 #popup .close:hover {
-    background: rgb(171, 209, 139);
+    background: rgba(174, 0, 255, 0.87);
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
 #popup .close:active {
-    background: rgb(109, 148, 78);
+    background: rgba(174, 0, 255, 0.5);
 }
 #popup img {
     float: left;
@@ -249,6 +248,7 @@ img.not_showing ~ p {
 /* setting checkbox size */
 .checkbox {
     line-height: 25px;
+    text-align: right
 } .checkmark {
     width: 25px;
     height: 25px;
@@ -285,11 +285,12 @@ img.not_showing ~ p {
     height: 25px;
     width: 25px;
     margin-left: 7px;
-    background: rgb(110, 158, 126);
+    margin-right: -35px;
+    background: rgba(174, 0, 255, 0.5);
     border-radius: 3px;
 }
 .checkbox:hover input ~ .checkmark {
-    background-color: rgb(76, 136, 96);;
+    background-color: rgba(174, 0, 255, 0.87);
 }
 .checkmark:after {
     content: "";
@@ -314,7 +315,7 @@ img.not_showing ~ p {
     #input_box label,
     #input_box input {
         /* clear: both; */
-        display: block;
+        /* display: block; */
         width: 100%;
         margin: 5px 0px;
     }
@@ -344,4 +345,16 @@ img.not_showing ~ p {
     #checkbox_box {
         padding: 8px 0px;
     }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

@@ -1,6 +1,14 @@
 var devicewidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var msg_img = document.getElementById('msg_img');
 
+
+function showMe (it, box) {
+    var vis = (box.checked) ? "block" : "none";
+    document.getElementById(it).style.display = vis;
+}
+
+
+
 msg_img.onerror = function() {
     if(!msg_img.classList.contains('not_showing')) {
         msg_img.classList.add('not_showing');
@@ -49,37 +57,31 @@ function showToUser(input) {
     final += input.toString() + "%";
     final += " ";
     if(input <= 0) {
-        final += " 👍";
-        popup(final, "")
+        popup(final, "img/under-0");
         return;
     }
-    if(input <= 15) {
-        final += " 🤦‍♂️";
-        popup(final, "img/downer-than-15");
+    if(input <= 10){
+        popup(final, "img/under-10");
         return;
     }
-    if(input <= 25){
-        popup(final, "img/downer-than-25");
+    if(input <= 30){
+        popup(final, "img/under-30");
         return;
     }
-    if(input <= 35){
-        popup(final, "img/downer-than-35");
+    if(input <= 50) {
+        popup(final, "img/under-50");
         return;
     }
-    if(input < 50) {
-        popup(final, "img/downer-than-50");
-        return;
-    }
-    if(input <= 65) {
-        popup(final, "img/upper-than-50");
+    if(input <= 70) {
+        popup(final, "img/over-50");
         return;
     }
     if(input <= 90) {
-        popup(final, "img/upper-than-65");
+        popup(final, "img/over-70");
         return;
     }
     if(input <= 100 ) {
-        popup(final, "img/upper-than-90");
+        popup(final, "img/over-90");
         return;
     }
 }
@@ -141,8 +143,8 @@ function closepopup() {
 
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('service worker registered'))
-      .catch(err => console.log('service worker not registered', err));
+        .then(reg => console.log('service worker registered'))
+        .catch(err => console.log('service worker not registered', err));
 } else {
     console.log("service worker not supported by your browser")
 }
