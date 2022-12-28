@@ -4,12 +4,12 @@
         <title>درصد‌گیر | درصد‌گیری و محاسبه درصد تست و آزمون</title>
         <meta charset="UTF-8">
         <meta name="author" content="AmirMahdi Nsh">
-        <meta name=description content="درصد گیری آزمون و تست به صورت آنلاین و آفلاین همراه یا بدون نمره منفی">
+        <meta name=description content="درصدگیری آنلاین آزمون و تست با نمره منفی دلخواه">
         <meta name="keywords" content="درصدگیری تست,درصدگیری آزمون,درصدگیری آنلاین,درصدگیر,درصد گیری,درصد گیر,درصد گیری درصدگیری تست">
         <meta property="og:site_name" content="درصد‌گیر" />
         <meta property="og:locale" content="fa_IR" />
         <meta property="og:title" content="درصد‌گیر" />
-        <meta property="og:description" content="درصدگیری آزمون و تست به صورت آنلاین و آفلاین" />
+        <meta property="og:description" content="درصدگیری آنلاین آزمون و تست" />
         <meta property="og:url" content="https://darsadgir.ir/" />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="reset.css"/>
@@ -52,23 +52,22 @@
         <!-- <h2 style="display: none;">درصدگیری، درصدگیر درصد‌گیر، تست. نحوه‌ی درصد گیری تست و آزمون آنلاین</h2> -->
         <header id="topbar">
             <!-- <div id="info_box"> -->
-                <h2 style="font-size:xx-large;">درصد‌گیر آزمون</h2>
-                <h3>محاسبه درصد تست و آزمون‌ها با یا بدون نمره منفی</h3>
+                <h2 style="font-size:xx-large;">درصد‌گیر!</h2>
+            </br>
+                <h3>محاسبه‌ی آنلاین درصد آزمون</h3>
             <!-- </div> -->
         </header>
 
         <div id="root_box" class="container">
             <div id="info_box">
-                <h1 style="font-size:x-large;"><b>درصد‌گیری آزمون و تست</b> به صورت آنلاین و آفلاین <b style="display: none">( درصد‌گیر آزمون )</b></h1>
-                <p>‌این صفحه قادر است در تلفن‌همراه به صورت آفلاین نیز اجرا شود. تنها کافیست از منوی مرورگرتان گزینه‌ی Add to Home screen را انتخاب کنید. البته امکان دارد مرورگرتان به دلایل مختلف برای مثال پر شدن حافظه بعد از مدتی داده‌های مورد نیاز این صفحه را پاک کند.</p>
+                <h1 style="font-size:x-large;"><b></b> <b style="display: none">درصد‌گیری آنلاین آزمون ( درصد‌گیر آزمون )</b></h1>
             </div>
             <div id="input_box">
-                <label for="numofquestions">تعداد سوالات :</label>
+                <label for="numofquestions">تعداد سؤالات:</label>
                 <input type="number" id="numofquestions" min="0" step="0"/>
-                <label for="corrects">تعداد درست‌ها :</label>
+                <label for="corrects">تعداد درست:</label>
                 <input type="number" id="corrects" min="0" step="0" />
-                <br/>
-                <label for="incorrects">تعداد غلط‌ها :</label>
+                <label for="incorrects">تعداد نادرست:</label>
                 <input type="number" id="incorrects" min="0" step="0" />
                 <br/>
             </div>
@@ -77,24 +76,34 @@
                 <span class="checkmark"></span>
                 با نمره منفی
             </label>
-            <button id="calc_btn" onclick="calculator()">محاسبه درصد</button>
         </div>
         <div id="settings" class="container">
             <div class="box">
                 <h3>تنظیمات نمره منفی</h3>
-                <hr style="border-color: rgb(186, 224, 199);" />
+                <hr style="border-color: rgba(174, 0, 255, 0.87);" />
                 <p>در قبال هر 
-                    <input type="number" step="0" min="0" value="3" id="negsettings_incorrects">
-                    سوال غلط،
-                    <input type="number" step="0" min="0" value="1" id="negsettings_corrects">
-                    سوال درست نادیده گرفته می‌شود.
+                    <input type="number" min="0" step="0" value="3" id="negsettings_incorrects">
+                    پاسخ نادرست، 
+                    <input type="number" min="0" step="0" value="1" id="negsettings_corrects">
+                    پاسخ درست نادیده گرفته می‌شود.
                 </p>
+            </div>
+        </div>
+        <div id="root_box" class="container">
+            <button id="calc_btn" onclick="calculator()">محاسبه‌ی درصد</button>
+        </div>
+        <div id="settings" class="container">
+            <div class="box" style="margin-top: 20px;">
+                <h3>درصدگیری آفلاین</h3>
+                <hr style="border-color: rgba(174, 0, 255, 0.87);" />
+                <p>‌این صفحه قادر است در تلفن‌همراه به صورت آفلاین نیز اجرا شود. تنها کافیست از منوی مرورگرتان گزینه‌ی Add to Home screen را انتخاب کنید. البته امکان دارد مرورگرتان به دلایل مختلف برای مثال پر شدن حافظه بعد از مدتی داده‌های مورد نیاز این صفحه را پاک کند.</p>
+                
             </div>
             <div class="box" style="margin-top: 20px;">
                 <h3>ارتباط با ما</h3>
-                <hr style="border-color: rgb(186, 224, 199);" />
+                <hr style="border-color: rgba(174, 0, 255, 0.87);" />
                 <p>در صورت بروز هر گونه مشکل از طریق <a href="https://github.com/amir28/darsadgir_pwa/issues/new" rel="noopener nofollow" target="_blank">این لینک</a> آن را با ما در میان بگذارید.
-                 همچنین بهتر است برای پیشگیری از بروز مشکلات، از مرورگر به‌روز استفاده کنید.</p>
+                همچنین بهتر است برای پیشگیری از بروز مشکلات، از مرورگر به‌روز استفاده کنید.</p>
                 
             </div>
         </div>
