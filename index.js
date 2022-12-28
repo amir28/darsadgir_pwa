@@ -1,6 +1,14 @@
 var devicewidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var msg_img = document.getElementById('msg_img');
 
+
+function showMe (it, box) {
+    var vis = (box.checked) ? "block" : "none";
+    document.getElementById(it).style.display = vis;
+}
+
+
+
 msg_img.onerror = function() {
     if(!msg_img.classList.contains('not_showing')) {
         msg_img.classList.add('not_showing');

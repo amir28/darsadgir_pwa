@@ -36,7 +36,7 @@ input[type = "number"] {
     text-align: center;
     border: 1px solid rgba(174, 0, 255, 0.87);
     border-radius: 5px;
-    padding: 0px 6px;
+    /* padding: 0px 6px; */
     padding-right: 0px;
 }
 #input_box input {
@@ -82,29 +82,31 @@ body {
     margin-bottom: 15px;
 }
 /* Styling inbox items */
-#calc_btn,
+/* #calc_btn,
 #input_box input,
 #input_box label {
     margin: 10px 0px;
-}
+} */
 #input_box input {
-    max-width: 5%;
+    max-width: 30px;
     transition: all 0.2s;
 }
 /* stick input and label together */
-#input_box input,
+
+/* #input_box input,
 #input_box label {
     float: center;
 } br {
-    clear: both; /* br tag seperate the text inputs*/
-}
-#input_box input {
+    clear: both;
+} */
+
+/* #input_box input {
     width: 85%;
 }
 #input_box label {
     width: 15%;
     line-height: 2.5;
-}
+} */
 
 #calc_btn {
     width: 100%;
@@ -119,9 +121,10 @@ body {
     color: rgb(255, 255, 255);
 }
 
-#calc_btn:focus,
+#settings .box input:focus,
+/* #calc_btn:focus, */
 #input_box input:focus {
-    box-shadow: 0px 0px 0px 3px rgb(99, 182, 99);
+    box-shadow: 0px 0px 0px 3px rgba(174, 0, 255, 0.5);
 }
 
 
@@ -149,7 +152,7 @@ body {
     width: 35px;
     max-width: 60px;
     font-size: 16px;
-    padding: 3px 4px;
+    /* padding: 3px 4px; */
     padding-right: 0px;
     border-radius: 3px;
     /* background: red; */
@@ -312,7 +315,7 @@ img.not_showing ~ p {
     #input_box label,
     #input_box input {
         /* clear: both; */
-        display: block;
+        /* display: block; */
         width: 100%;
         margin: 5px 0px;
     }
